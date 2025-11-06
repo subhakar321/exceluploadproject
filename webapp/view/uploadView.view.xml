@@ -1,0 +1,101 @@
+<mvc:View controllerName="exceluploadproject.controller.uploadView"
+    	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+    	xmlns:l="sap.ui.layout"
+	xmlns:u="sap.ui.unified"
+    xmlns="sap.m">
+     <Page id="page" title="{i18n>title}">
+    <content>
+    <!-- <VBox id="_IDGenVBox" > -->
+			<!-- <ComboBox id="_IDGenComboBox"
+				items="{csvModel>/csvRows}">
+				<core:Item id="_IDGenItem" key="{csvModel>name}" text="{csvModel>name}" />
+			</ComboBox> -->
+            	<!-- <l:VerticalLayout id="_IDGenVerticalLayout"> -->
+		<u:FileUploader
+			id="excelUploader"
+                name="excelFile"
+                fileType="xlsx"
+                change="onExcelUpload"/>
+		<Button id="_IDGenButton" text="Save to HANA" press="onSaveToHana"/>
+		  <Table
+                id="idCSVTable"
+                growing="true"
+                growingThreshold="10"
+                paste="onPaste"
+                items="{csvModel>/csvRows}">
+                <headerToolbar>
+                    <OverflowToolbar id="otbSubheader">
+                        <Title id="_IDGenTitle"
+                            text="CSV-DATA"
+                            level="H2"
+                        />
+                        <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                        <Button
+                            id="editButton"
+                            text="Edit"
+                            type="Transparent"
+                            press="onEdit"
+                        />
+                        <Button
+                            id="saveButton"
+                            text="Save"
+                            type="Transparent"
+                            press="onSave"
+                           
+                        />
+                        <Button
+                            id="cancelButton"
+                            text="Cancel"
+                            type="Transparent"
+                            press="onCancel"
+                           
+                        />
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column id="_IDGenColumn" width="12em">
+                        <Text id="_IDGenText" text="ID" />
+                    </Column>
+                    <Column id="_IDGenColumn1">
+                        <Text id="_IDGenText6" text="NAME" />
+                    </Column>
+                    <Column id="_IDGenColumn2">
+                        <Text id="_IDGenText7" text="PLACE" />
+                    </Column>
+					<Column id="_IDGenColumn3">
+                        <Text  text="Select" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="_IDGenColumnListItem" vAlign="Middle" >
+                        <cells>
+                            <Text id="_IDGenText8" text="{csvModel>id}" />
+                            <Text id="_IDGenText9" text="{csvModel>name}" />
+                            <Text id="_IDGenText10" text="{csvModel>place}" />
+								<CheckBox id="idCheckBox" selected="{csvModel>selected}" enabled="{= ${view>/bEditMode} }"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+            <!-- <List id="lstPreview" items="{ /parsedRows }">
+<items>
+<CustomListItem id="_IDGenCustomListItem">
+<HBox id="_IDGenHBox">
+<Text id="_IDGenText1" text="{id}" />
+<Text id="_IDGenText2" text=", " />
+<Text id="_IDGenText3" text="{name}" />
+<Text id="_IDGenText4" text=", " />
+<Text id="_IDGenText5" text="{place}" />
+</HBox>
+</CustomListItem>
+</items>
+</List> -->
+	<!-- </l:VerticalLayout> -->
+	<!-- <Button id="_IDGenButton2"
+			text="navFile"
+			press="onNav"/>
+    </VBox> -->
+		</content>
+    </Page>
+</mvc:View>

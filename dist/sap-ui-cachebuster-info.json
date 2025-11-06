@@ -1,0 +1,22 @@
+{
+  "i18n/i18n.properties": 1762173286760,
+  "model/models.js": 1762173286768,
+  "controller/uploadView.controller.js": 1762428579365,
+  "controller/App.controller.js": 1762173286768,
+  "manifest.json": 1762173426280,
+  "Component.js": 1762173286756,
+  "controller/uploadView-dbg.controller.js": 1762428579365,
+  "controller/uploadView.controller.js.map": 1762428828263,
+  "model/models-dbg.js": 1762173286768,
+  "model/models.js.map": 1762428828247,
+  "controller/App-dbg.controller.js": 1762173286768,
+  "controller/App.controller.js.map": 1762428828246,
+  "Component-dbg.js": 1762173286756,
+  "Component.js.map": 1762428828248,
+  "Component-preload.js": 1762428828457,
+  "Component-preload.js.map": 1762428828457,
+  "view/uploadView.view.xml": 1762426856830,
+  "view/App.view.xml": 1762173286768,
+  "css/style.css": 1762173286768,
+  "index.html": 1762175022234
+}
