@@ -99,9 +99,16 @@
 			"routes": [
 				{
 					"name": "RouteuploadView",
-					"pattern": ":?query:",
+					"pattern": "",
 					"target": [
 						"TargetuploadView"
+					]
+				},
+				{
+					"name": "Log",
+					"pattern": "Log",
+					"target": [
+						"LogTarget"
 					]
 				}
 			],
@@ -109,6 +116,10 @@
 				"TargetuploadView": {
 					"id": "uploadView",
 					"name": "uploadView"
+				},
+				"LogTarget": {
+					"id": "Log",
+					"name": "Log"
 				}
 			}
 		},

@@ -1,0 +1,163 @@
+<mvc:View controllerName="exceluploadproject.controller.Log"
+    displayBlock="true"
+     xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:u="sap.ui.unified"
+    xmlns="sap.m">
+    <Page>
+         <content>
+            <l:FixFlex minFlexSize="400">
+                <l:fixContent>
+                    <VBox>
+                        <Title
+                            text="{i18n>logTableTitle}"
+                            titleStyle="H4"
+                            class="sapUiTinyMarginBegin sapUiTinyMarginTop"
+                        />
+                        <HBox
+                            alignItems="Center"
+                            alignContent="Center"
+                            justifyContent="Center"
+                            width="100%"
+                        >
+                            <HBox>
+                                <Label
+                                    id="_IDfrom"
+                                    design="Bold"
+                                    text="{i18n>fromDate}"
+                                    class="sapUiTinyMarginTop sapUiTinyMarginBegin"
+                                />
+                                <DatePicker
+                                    id="idFromDate"
+                                    width="10rem"
+                                    valueFormat="dd-MM-yyyy"
+                                    displayFormat="dd-MM-yyyy"
+                                    change=".onDateChange"
+                                   value="{filterModel>/fromDate}"
+                                />
+                            </HBox>
+                            <HBox>
+                                <Label
+                                    id="_IDto"
+                                    design="Bold"
+                                    text="{i18n>ToDate}"
+                                    class="sapUiTinyMarginTop sapUiTinyMarginBegin"
+                                />
+                                <DatePicker
+                                    id="idToDate"
+                                    width="10rem"
+                                    valueFormat="dd-MM-yyyy"
+                                    displayFormat="dd-MM-yyyy"
+                                    change=".onDateChange"
+                                   value="{filterModel>/toDate}"
+                                />
+                                 <Label
+                                    id="_IDUser"
+                                    design="Bold"
+                                    text="{i18n>filterUser}"
+                                    class="sapUiTinyMarginTop sapUiTinyMarginBegin"
+                                />
+                                <ComboBox selectedKey="{filterModel>/selectedUser}"
+                                    items="{logModel>/fileLog}"
+                                >
+                                    <core:Item
+                                        key="{logModel>user}"
+                                        text="{logModel>user}"
+                                    />
+                                </ComboBox>
+                                <Label
+                                    id="_IDStatus"
+                                    design="Bold"
+                                    text="{i18n>filterStatus}"
+                                    class="sapUiTinyMarginTop sapUiTinyMarginBegin"
+                                />
+                                <ComboBox
+                                    items="{logModel>/fileLog}" selectedKey="{filterModel>/selectedStatus}"
+                                >
+                                    <core:Item
+                                        key="{logModel>status}"
+                                        text="{logModel>status}"
+                                    />
+                                </ComboBox>
+                                
+                                <Button
+                                    type="Emphasized"
+                                    text="{i18n>executeBtn}"
+                                    press="onPressExecute"
+                                    class="sapUiTinyMarginBegin"
+                                />
+                            </HBox>
+                        </HBox>
+                        <FlexBox
+                            id="fbMContItemDetails"
+                            justifyContent="SpaceAround"
+                            class="tileContainer whiteBg bottomSubTile sapUiTinyMargin custToggleAnimation"
+                            width="98.5%"
+                        >
+                            <VBox>
+                                <HBox>
+                                    <core:Icon
+                                        src="sap-icon://color-fill"
+                                        class="iconPosition sapUiTinyMarginTop"
+                                        color="#A95DF1"
+                                    />
+                                    <Label
+                                        id="_IDTableTitle"
+                                        design="Bold"
+                                        text="{i18n>logTableTitle}"
+                                        class="RevenueValueTitle sapUiSmallMarginBegin sapUiTinyMarginTop tileSubContentHeading"
+                                    />
+                                </HBox>
+                                <Table
+                                    class="sapUiLargeMarginEnd"
+                                    width="98%"
+                                    id="idLogsTable"
+                                    backgroundDesign="Transparent"
+                                    items="{logModel>/fileLog}"
+			                      
+			
+		                            
+                                >
+                                    <columns>
+                                        <Column width="12em">
+                                            <Text
+                                                text="{i18n>fileName}"
+                                                class="whiteFont"
+                                            />
+                                        </Column>
+                                        <Column>
+                                            <Text
+                                                text="{i18n>timestamp}"
+                                                class="whiteFont"
+                                            />
+                                        </Column>
+                                        <Column>
+                                            <Text
+                                                text="{i18n>status}"
+                                                class="whiteFont"
+                                            />
+                                        </Column>
+                                    </columns>
+                                    <items>
+                                        <ColumnListItem vAlign="Middle" type="Navigation" press=".onItemPress">
+                                            <cells>
+                                                <Text text="{logModel>filename}" />
+                                                <Text
+                                                    text="{logModel>logtime}"
+                                                />
+                                                <Text
+                                                    text="{logModel>status}"
+                                                />
+                                            </cells>
+                                        </ColumnListItem>
+                                    </items>
+                                </Table>
+                            </VBox>
+                        </FlexBox>
+                    </VBox>
+                </l:fixContent>
+                </l:FixFlex >
+                </content>
+    </Page>
+</mvc:View>

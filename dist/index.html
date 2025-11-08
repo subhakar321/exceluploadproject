@@ -12,7 +12,10 @@
         }
     </style>
 
-    <!-- ✅ Load SAPUI5 Core from official CDN -->
+    <!-- ✅ Load XLSX first -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+    <!-- ✅ Then load SAPUI5 -->
     <script
         id="sap-ui-bootstrap"
         src="https://ui5.sap.com/resources/sap-ui-core.js"
@@ -25,9 +28,6 @@
         data-sap-ui-async="true"
         data-sap-ui-frameOptions="trusted">
     </script>
-
-    <!-- ✅ Load Excel (XLSX) library -->
-    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 </head>
 
 <body class="sapUiBody sapUiSizeCompact" id="content">
