@@ -227,19 +227,19 @@ sap.ui.define([
             logtime: sLogTime.split("T")[0]
         };
 
-        await new Promise((resolve, reject) => {
-            oModel.create("/fileLog", oLogPayload, {
-                success: function () {
-                    console.log("Log created:", oLogPayload);
-                    resolve();
-                    oModel.refresh();
-                },
-                error: function (err) {
-                    console.error("Error creating log:", err);
-                    reject(err);
-                }
-            });
-        });
+        // await new Promise((resolve, reject) => {
+        //     oModel.create("/fileLog", oLogPayload, {
+        //         success: function () {
+        //             console.log("Log created:", oLogPayload);
+        //             resolve();
+        //             oModel.refresh();
+        //         },
+        //         error: function (err) {
+        //             console.error("Error creating log:", err);
+        //             reject(err);
+        //         }
+        //     });
+        // });
 
         // Navigate to log view
         this.getOwnerComponent().getRouter().navTo("Log");
