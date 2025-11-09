@@ -31,9 +31,9 @@
                                 <DatePicker
                                     id="idFromDate"
                                     width="10rem"
-                                    valueFormat="dd-MM-yyyy"
+                                    valueFormat="yyyy-MM-dd"
                                     displayFormat="dd-MM-yyyy"
-                                    change=".onDateChange"
+                                    change=".onFilterChange"
                                    value="{filterModel>/fromDate}"
                                 />
                             </HBox>
@@ -47,9 +47,9 @@
                                 <DatePicker
                                     id="idToDate"
                                     width="10rem"
-                                    valueFormat="dd-MM-yyyy"
+                                    valueFormat="yyyy-MM-dd"
                                     displayFormat="dd-MM-yyyy"
-                                    change=".onDateChange"
+                                     change=".onFilterChange"
                                    value="{filterModel>/toDate}"
                                 />
                                  <Label
@@ -58,8 +58,9 @@
                                     text="{i18n>filterUser}"
                                     class="sapUiTinyMarginTop sapUiTinyMarginBegin"
                                 />
-                                <ComboBox selectedKey="{filterModel>/selectedUser}"
-                                    items="{logModel>/fileLog}"
+                                <ComboBox showClearIcon="true"
+                                    width="10rem" selectedKey="{filterModel>/selectedUser}"
+                                    items="{logModel>/uniqueUsers}"  change=".onFilterChange"
                                 >
                                     <core:Item
                                         key="{logModel>user}"
@@ -73,7 +74,8 @@
                                     class="sapUiTinyMarginTop sapUiTinyMarginBegin"
                                 />
                                 <ComboBox
-                                    items="{logModel>/fileLog}" selectedKey="{filterModel>/selectedStatus}"
+                                   showClearIcon="true"
+                                    width="10rem" items="{logModel>/uniqueStatuses}" selectedKey="{filterModel>/selectedStatus}"  change=".onFilterChange"
                                 >
                                     <core:Item
                                         key="{logModel>status}"
