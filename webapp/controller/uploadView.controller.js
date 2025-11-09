@@ -168,6 +168,7 @@ sap.ui.define([
         sStatus = "Failure";
         sFailureReason = "Missing Name or Place in one or more rows. Upload cancelled.";
         sap.m.MessageToast.show("Upload failed: " + sFailureReason);
+        oFileUploader.clear();
 
         // Log failure
         const oFailLogPayload = {
@@ -208,11 +209,13 @@ sap.ui.define([
                     console.log("Function success:", oData);
                     sap.m.MessageToast.show("Excel data uploaded successfully!");
                     resolve();
+                    oFileUploader.clear();
                    oModel.refresh();
                 },
                 error: function (oError) {
                     console.error("Function error:", oError);
                     sap.m.MessageToast.show("Error uploading Excel data!");
+                    oFileUploader.clear();
                     sStatus = "Failure";
                     reject(oError);
                 }
@@ -247,6 +250,7 @@ sap.ui.define([
     } catch (e) {
         console.error("Upload Exception:", e);
         sap.m.MessageToast.show("Unexpected error during upload.");
+        oFileUploader.clear();
     }
 },
 
